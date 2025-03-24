@@ -54,6 +54,6 @@ En este apartado se abordan los métodos más utilizados de la clase String en J
 ***
 ## Recursos Adicionales
 
-![foto de sintaxis básica de Java](https://edteam-media.s3.amazonaws.com/community/original/5d5f1dcf-05cd-438f-9279-e185a7523ee1.jpg)
+![image](https://github.com/user-attachments/assets/53a6fcdb-a9b9-484e-a289-447ea763fdf9)
 
 [Mis apuntes de clases de java](https://docs.google.com/document/d/1UQKqXJs8Lfmtzleo0wHB9RxlRbQ_zkJz3XWycYPm5ko/edit?usp=sharing)
