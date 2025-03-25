@@ -30,7 +30,15 @@ En POO1, aprenderás los fundamentos de la Programación Orientada a Objetos (PO
 
 
 ## Temas Cubiertos
-### - 1. Métodos de la clase String
+
+### - 1. Modelado de Objetos
+Se aprenderá a definir clases con propiedades (atributos) y métodos que representen acciones y estados de los objetos. Esto incluye:
+* Declaración de variables de instancia (atributos) para almacenar información.
+* Creación de constructores para inicializar objetos.
+* Implementación de métodos para definir comportamientos.
+* Uso de encapsulamiento para proteger los datos y controlar el acceso a ellos mediante modificadores de acceso como private, public y protected.
+
+### - 2. Métodos de la clase String
 En este apartado se abordan los métodos más utilizados de la clase String en Java, los cuales permiten manipular cadenas de texto de manera sencilla y eficiente. Algunos de los métodos clave que se han visto incluyen:
 
 - **.length()**: Devuelve el número de caracteres de la cadena.
@@ -50,6 +58,84 @@ En este apartado se abordan los métodos más utilizados de la clase String en J
 - **.replace(CharSequence target, CharSequence replacement)**: Reemplaza una secuencia de caracteres por otra.
 - **.indexOf(int ch)**: Devuelve el índice de la primera aparición de un carácter.
 
+## Ejemplo
+
+```java
+public class Person {
+
+    // PROPIEDADES
+    private short yearofBirth = 2024;
+    private String name;
+    private String surname;
+    private boolean brokenName;
+    private boolean brokenSurname;
+    private String color;
+
+    // GETTER
+    public short getYearofBirth() {
+        return yearofBirth;
+    }
+
+    // SETTER
+
+    public boolean isBrokenName() {
+        return brokenName;
+    }
+
+    // CONSTRUCTORES
+
+    public Person(String name, String surname, short yearOfBirth) {
+        this.name = name;
+        this.surname = surname;
+        this.yearofBirth = yearOfBirth;
+    }
+
+    public Person(Person p) {
+        name = p.name;
+        surname = p.surname;
+        yearofBirth = p.yearofBirth;
+    }
+
+    // METODOS
+    public void show() {
+        System.out.printf("Person %S %S de %d años.%n",
+                name, surname, yearofBirth);
+    }
+
+    public boolean isBroken() {
+        return brokenName || brokenSurname;
+    }
+
+    public boolean changeName(String name, String surname) {
+
+        name = name.trim();
+        surname = surname.trim();
+        int contadorDeEspaciosEnBlanco = 0;
+
+        for (int i = 0; i < name.length() && i < surname.length(); i++) {
+            if (name.charAt(i) == ' ' && surname.charAt(i) == ' ') {
+                contadorDeEspaciosEnBlanco++;
+                if (contadorDeEspaciosEnBlanco > 1) {
+                    return false;
+                }
+            }
+        }
+
+        // longitud no más que 20
+        if (name.length() > 20 && surname.length() > 20) {
+            return false;
+        }
+
+        // no puede ser blanco
+        if (name.trim().equals("") || surname.trim().equals("")) {
+            return false;
+        }
+
+        System.out.print("El nombre se ha cambiado: ");
+        return true;
+    }
+}
+```
 
 ***
 ## Recursos Adicionales
@@ -57,3 +143,5 @@ En este apartado se abordan los métodos más utilizados de la clase String en J
 ![image](https://github.com/user-attachments/assets/53a6fcdb-a9b9-484e-a289-447ea763fdf9)
 
 [Mis apuntes de clases de java](https://docs.google.com/document/d/1UQKqXJs8Lfmtzleo0wHB9RxlRbQ_zkJz3XWycYPm5ko/edit?usp=sharing)
+
+[Youtube: POO](https://www.youtube.com/watch?v=SI7O81GMG2A&t=23s)
